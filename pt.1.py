@@ -19,8 +19,18 @@ data_graph=np.array(data_graph)
 plt.xlim(500,1000) 
 plt.ylim(500,1000)
 plt.scatter(data_graph[:,0],data_graph[:,1],s=0.1,alpha=0.4)
-log_Mtot=[np.log10(data_graph[:,4])]
-plt.hist(log_Mtot)
+log_Mbound=[np.log10(data_graph[:,3])]
+plt.hist(log_Mbound[0])
+
+data_graph_2=[]
+for z in range(len(data_graph)):
+    if(data_graph[z][3]>(10**12)):
+       data_graph_2.append(data_graph[z])
+       
+data_graph_2=np.array(data_graph_2)
+plt.xlim(500,1000) 
+plt.ylim(500,1000)
+plt.scatter(data_graph_2[:,0],data_graph_2[:,1],s=0.1,alpha=0.4)
 """
 ¿Cómo se llegó al nuevo archivo de texto?
 
