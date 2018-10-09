@@ -31,6 +31,12 @@ data_graph_2=np.array(data_graph_2)
 plt.xlim(500,1000) 
 plt.ylim(500,1000)
 plt.scatter(data_graph_2[:,0],data_graph_2[:,1],s=0.1,alpha=0.4)
+
+Beta_10=[]
+for i in range(int(len(data_graph_2)/10)):
+    Beta_10.append([data_graph_2[i,0],data_graph_2[i,1],data_graph_2[i,2]])
+# np.savetxt('C:/Users/Yilver Garcia/Desktop/B-Skeleton/beta_10xyz.dat',Beta_10)   
+
 """
 ¿Cómo se llegó al nuevo archivo de texto?
 
