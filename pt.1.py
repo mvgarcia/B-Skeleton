@@ -1,6 +1,18 @@
 import numpy as np
 import matplotlib.pyplot as plt
 import h5py
+
+a,b,c,new=[],[],[],[]
+def ordenar(array):
+    a=array[:,0]
+    b=array[:,1]
+    c=array[:,2]
+    ix=np.lexsort((c,b,a))
+    new=[]
+    for i in range(len(ix)):
+        new.append(array[ix[i]])
+    return(new)
+    
 data=np.loadtxt('C:/Users/Yilver Garcia/Desktop/B-Skeleton/xyzM.dat')
 x=data[0]
 y=data[1]
@@ -32,10 +44,20 @@ plt.xlim(500,1000)
 plt.ylim(500,1000)
 plt.scatter(data_graph_2[:,0],data_graph_2[:,1],s=0.1,alpha=0.4)
 
+"""
+Después de cambiar el tamaño
+"""
+data=np.loadtxt('C:/Users/Yilver Garcia/Desktop/B-Skeleton/betaxyz.dat')
+nuevo=ordenar(data)
+nuevo=np.array(nuevo)
+
 Beta_10=[]
-for i in range(int(len(data_graph_2)/10)):
-    Beta_10.append([data_graph_2[i,0],data_graph_2[i,1],data_graph_2[i,2]])
-# np.savetxt('C:/Users/Yilver Garcia/Desktop/B-Skeleton/beta_10xyz.dat',Beta_10)   
+for i in range(int(len(data)/10)):
+    Beta_10.append([nuevo[i,0],nuevo[i,1],nuevo[i,2]])
+# np.savetxt('C:/Users/Yilver Garcia/Desktop/B-Skeleton/beta_10xyz.dat',Beta_10)
+    
+
+
 
 """
 ¿Cómo se llegó al nuevo archivo de texto?
