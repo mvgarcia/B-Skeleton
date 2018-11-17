@@ -1,0 +1,7 @@
+ gcc -o  c:\Users\'Yilver Garcia'\Desktop\holamundo.exe  C:\Users\'Yilver Garcia'\Desktop\B-Skeleton\hol.c---guardar el archivo ejecutable
+ c:\Users\'Yilver Garcia'\Desktop\holamundo.exe abrirlo
+
+en bloc de notas se crea archivo c y se guarda : nombre.c
+
+En la cmd 
+g++ prueba.cpp -o code.exe
